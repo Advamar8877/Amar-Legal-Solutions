@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legal Solutions Provider</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      line-height: 1.6;
+    }
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    nav {
+      background: #e3e3e3;
+      text-align: center;
+      padding: 10px 0;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.1em;
+    }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      margin-bottom: 10px;
+      border-bottom: 2px solid #003366;
+      padding-bottom: 5px;
+    }
+    ul {
+      list-style: disc inside;
+      margin: 10px 0 0 20px;
+    }
+    .review {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .review:last-child {
+      border-bottom: none;
+    }
+    .review-author {
+      font-weight: bold;
+    }
+    .comments-form {
+      margin-top: 20px;
+    }
+    .comments-form input,
+    .comments-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    .comments-form button {
+      background: #003366;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    footer {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Legal Solutions Provider</h1>
+  </header>
+
+  <nav>
+    <a href="#about-us">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <!-- About Us Section -->
+    <section id="about-us">
+      <h2>About Us</h2>
+      <p>We are dedicated to providing comprehensive legal solutions tailored to your needs. Our team of professional legal experts offers personalized advice, ensuring confidence and clarity in every legal matter.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Legal Consultation</li>
+        <li>Case Analysis</li>
+        <li>Contract Drafting and Review</li>
+        <li>Legal Documentation</li>
+        <li>Online Legal Advice</li>
+      </ul>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews">
+      <h2>Customer Reviews</h2>
+      <!-- Existing Reviews -->
+      <div id="reviews-list">
+        <div class="review">
+          <p class="review-author">John Doe:</p>
+          <p>Great service! They helped me navigate my legal issues with professionalism and care.</p>
+        </div>
+        <div class="review">
+          <p class="review-author">Jane Smith:</p>
+          <p>Very reliable and knowledgeable. I highly recommend their expertise.</p>
+        </div>
+      </div>
+
+      <!-- Comment & Review Form -->
+      <div class="comments-form">
+        <h3>Leave a Review</h3>
+        <form id="review-form" action="#" method="post">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <textarea id="comment" name="comment" rows="4" placeholder="Your Review" required></textarea>
+          <button type="submit">Submit Review</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or need legal advice, please reach us at <a href="mailto:info@legalsolutions.com">info@legalsolutions.com</a>.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Legal Solutions Provider. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript to handle review form submissions.
+    document.getElementById('review-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      var name = document.getElementById('name').value.trim();
+      var comment = document.getElementById('comment').value.trim();
+      
+      if (name !== "" && comment !== "") {
+        var reviewsList = document.getElementById('reviews-list');
+        var newReview = document.createElement('div');
+        newReview.classList.add('review');
+        
+        newReview.innerHTML = '<p class="review-author">' + name + ':</p><p>' + comment + '</p>';
+        reviewsList.appendChild(newReview);
+        
+        // Clear form fields after submission.
+        this.reset();
+      }
+    });
+  </script>
+</body>
+</html>
